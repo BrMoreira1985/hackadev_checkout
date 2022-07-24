@@ -1,15 +1,10 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 :root {
-  --background: rgb(237, 237, 237);
-  --overlay: rgba(255, 255, 255, 0.789);
-  --text_color_medium: rgb(58, 58, 58);
-  --text_color_dark: black;
-  --text_color_light: rgb(225, 225, 225);
-  --shadow_color: rgba(82, 82, 82, 0.482);
   --azul_marinho: #1b2c58;
   --azul_piscina: #478f98;
   --amarelo: #fb8f01;
@@ -24,8 +19,11 @@
   --cor_texto_botoes: var(--branco_amarelado);
   --cor_cartoes: var(--branco_amarelado);
   --cor_fundo: var(--laranja_faded);
-  --cor_texto_normal: grey;
-  --cor_texto_escuro: #1b1b1b;
+  --cor_header: var(--azul_piscina);
+  --cor_texto_normal: #69868a;
+  --cor_texto_escuro: #2d494d;
+  --cor_fog: #000000bc;
+  --overlay: #fffcf7d3;
 }
 
 body {
@@ -37,10 +35,15 @@ body {
   color: var(--cor_texto_normal);
 }
 
+.hidden {
+  display: none;
+}
+
 .checkout {
   display: flex;
   flex-direction: column;
   font-weight: 100;
+  transition: all 300ms;
 }
 
 .card {
@@ -53,18 +56,44 @@ body {
   margin-bottom: 5px;
 }
 
+.card--header {
+  position: fixed;
+  z-index: 11;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding-top: 0;
+  margin-top: 0;
+  height: 50px;
+  background-color: var(--cor_header);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-ocean {
+  height: 48px;
+  padding-top: 10px;
+}
+
 .card--titulo {
-  color: var(--text_color_dark);
+  color: var(--cor_texto_escuro);
 }
 
 .card--dados {
   display: flex;
+  margin-top: 50px;
 }
 
 .card--nome-telefone {
   display: flex;
   justify-content: space-between;
   color: var(--cor_texto_escuro);
+}
+
+.card--informacoes {
+  width: 90%;
 }
 
 .card--botao-endereco {
@@ -81,6 +110,13 @@ body {
   width: 10%;
   align-items: center;
   justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+.card--alterar-dados {
+  height: 0;
+  padding: 0;
+  margin: 0;
 }
 
 .card--cabecalho {
@@ -145,15 +181,42 @@ body {
   right: 10px;
 }
 
+.OpcoesPagamento {
+  overflow: hidden;
+  height: 0;
+}
+
+.pagamento__show {
+  height: 50px;
+  transition: all 0.3s ease-in;
+}
+
 .card--opcao-pagamento {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
+.parcelas {
+  height: 0;
+  overflow: hidden;
+  display: flex;
+  width: 100%;
+  transition: all 0.2s ease-in;
+}
+
+.seletor--parcelas {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.parcelas__show {
+  height: 50px;
+}
+
 .card--opcao-pagamento img {
-  width: 32px;
-  height: 32px;
+  width: 64px;
+  height: 64px;
   padding-right: 10px;
   padding-left: 10px;
   padding-top: 10px;
@@ -178,7 +241,7 @@ hr {
   z-index: 10;
   display: flex;
   flex-direction: column;
-  height: 80px;
+  height: 100px;
   bottom: 0;
   left: 0;
   right: 0;
@@ -194,8 +257,10 @@ hr {
 }
 
 .botao-finalizar {
-  width: 90%;
-  height: 40px;
+  width: 0%;
+  pointer-events: none;
+  overflow: hidden;
+  padding: 10px 0 10px 0;
   align-self: center;
   border: none;
   background-color: var(--cor_botoes);
@@ -204,9 +269,45 @@ hr {
   font-family: "Poppins", sans-serif;
 }
 
+.botao__show {
+  width: 90%;
+  pointer-events: auto;
+  transition: all 0.2s ease-in-out;
+}
+
 .card--footer {
-  height: 200px;
+  height: 95px;
   background-color: none;
   background-color: var(--cor_fundo);
   font-weight: bolder;
+}
+
+.card--sacola {
+  position: fixed;
+  z-index: 12;
+  bottom: -200%;
+  left: 0;
+  right: 0;
+  height: 500px;
+  transition: all 0.15s ease-out;
+}
+
+.card--fog {
+  z-index: 11;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+  background-color: var(--cor_fog);
+  pointer-events: none;
+  transition: all 0.1s ease-in;
+}
+
+.mostrar__opacidade {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mostrar__slide {
+  bottom: -10px;
 }
