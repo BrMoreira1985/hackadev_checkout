@@ -1,0 +1,212 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --background: rgb(237, 237, 237);
+  --overlay: rgba(255, 255, 255, 0.789);
+  --text_color_medium: rgb(58, 58, 58);
+  --text_color_dark: black;
+  --text_color_light: rgb(225, 225, 225);
+  --shadow_color: rgba(82, 82, 82, 0.482);
+  --azul_marinho: #1b2c58;
+  --azul_piscina: #478f98;
+  --amarelo: #fb8f01;
+  --laranja: #ff4d2f;
+  --rosa_coral: #fd4e5b;
+  --amarelo_faded: #ffeee7;
+  --branco_amarelado: #fffcf7;
+  --rosa_coral_faded: #fff0f1;
+  --laranja_faded: #fdded8;
+
+  --cor_botoes: var(--azul_piscina);
+  --cor_texto_botoes: var(--branco_amarelado);
+  --cor_cartoes: var(--branco_amarelado);
+  --cor_fundo: var(--laranja_faded);
+  --cor_texto_normal: grey;
+  --cor_texto_escuro: #1b1b1b;
+}
+
+body {
+  background-color: var(--cor_fundo);
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: var(--cor_texto_normal);
+}
+
+.checkout {
+  display: flex;
+  flex-direction: column;
+  font-weight: 100;
+}
+
+.card {
+  background-color: var(--cor_cartoes);
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 8px;
+  padding-right: 8px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.card--titulo {
+  color: var(--text_color_dark);
+}
+
+.card--dados {
+  display: flex;
+}
+
+.card--nome-telefone {
+  display: flex;
+  justify-content: space-between;
+  color: var(--cor_texto_escuro);
+}
+
+.card--botao-endereco {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--cor_botoes);
+  color: var(--cor_cartoes);
+}
+
+.card--acao {
+  display: flex;
+  width: 10%;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.card--cabecalho {
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card--itens {
+  display: flex;
+  width: auto;
+  overflow: scroll;
+  scrollbar-width: none;
+}
+
+.card--itens::-webkit-scrollbar {
+  display: none;
+}
+
+.card--imagem {
+  display: block;
+  padding-right: 10px;
+  height: 128px;
+}
+
+.card--quantidade {
+  font-size: 9px;
+  display: flex;
+  z-index: 9;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  left: 50%;
+  top: -30%;
+  transform: translate(-50%, 0);
+  background-color: var(--overlay);
+  border-radius: 50%;
+  color: var(--text_color_dark);
+}
+
+.card--rodape {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+}
+
+.card--selecoes-frete {
+  display: flex;
+  flex-direction: row;
+  padding: 10px 0 10px 0;
+}
+
+.forma {
+  padding-left: 10px;
+}
+
+.valor {
+  position: absolute;
+  right: 10px;
+}
+
+.card--opcao-pagamento {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.card--opcao-pagamento img {
+  width: 32px;
+  height: 32px;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background-color: var(--azul_piscina);
+  box-shadow: none;
+}
+
+.linha {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0 10px 0;
+}
+
+.card--finalizar {
+  position: fixed;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  height: 80px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-bottom: 0;
+  box-shadow: 0 -1px 10px var(--cor_fundo);
+}
+
+.card--finalizar-texto {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 10px;
+}
+
+.botao-finalizar {
+  width: 90%;
+  height: 40px;
+  align-self: center;
+  border: none;
+  background-color: var(--cor_botoes);
+  color: var(--cor_cartoes);
+  letter-spacing: 1.5px;
+  font-family: "Poppins", sans-serif;
+}
+
+.card--footer {
+  height: 200px;
+  background-color: none;
+  background-color: var(--cor_fundo);
+  font-weight: bolder;
+}
