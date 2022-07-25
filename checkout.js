@@ -20,7 +20,7 @@ let quantidadeParcelas = 0;
 let desconto = 0;
 let formaPagamento = '';
 let tipoParcelamento = "";
-const lockScreen = screen.orientation.lock('portrait');
+//const lockScreen = screen.orientation.lock('portrait');
 
 function atualizaResumo(parametro, valor){
 

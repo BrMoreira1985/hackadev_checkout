@@ -96,8 +96,10 @@
             value="SEDEX"
             onclick="adicionaFrete(50, 2); mostraPagamentos()"
           />
-          <h3 class="card--texto forma">Sedex (Até 2 dias úteis)</h3>
-          <h3 class="card--texto valor">+R$ 50,00</h3>
+          <div class="frete--texto">
+            <h3 class="card--texto forma">Sedex (Até 2 dias úteis)</h3>
+            <h3 class="card--texto valor">+R$ 50,00</h3>
+          </div>
         </div>
 
 
@@ -109,8 +111,10 @@
             value="PAC"
             onclick="adicionaFrete(20, 6); mostraPagamentos()"
           />
+          <div class="frete--texto">
           <h3 class="card--texto forma">PAC (Até 6 dias úteis)</h3>
           <h3 class="card--texto valor">+R$ 20,00</h3>
+        </div>
         </div>
 
 
@@ -122,8 +126,10 @@
             value="RETIRA"
             onclick="adicionaFrete(0, 0); mostraPagamentos()"
           />
+          <div class="frete--texto">
           <h3 class="card--texto forma">Retirar Pessoalmente</h3>
           <h3 class="card--texto valor">Grátis</h3>
+        </div>
         </div>
       </div>
       <!--Frete: fim-->
@@ -142,8 +148,6 @@
             <img src="/imagens/icons/pix-icon.png" />
             <h3 class="card--texto">Pix</h3>
           </div>
-
-
 
           <div class="card--opcao-pagamento OpcoesPagamento">
             <input
@@ -266,7 +270,7 @@
       <!--Cupom: início-->
       <div class="card card--botao-cupom botaoCupom" onclick="mostrarCupom()">
         <div class="linha">
-          <h2 class="card--titulo">Aplicar Cupom</h3>
+          <h2 class="card--titulo">Aplicar Cupom</h2>
         </div>
 
         <div class="card--cupom cardCupom">
