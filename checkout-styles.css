@@ -14,6 +14,7 @@
   --branco_amarelado: #fffcf7;
   --rosa_coral_faded: #fff0f1;
   --laranja_faded: #fdded8;
+  --azul_piscina_transparente: #478f981d;
 
   --cor_botoes: var(--azul_piscina);
   --cor_texto_botoes: var(--branco_amarelado);
@@ -24,6 +25,8 @@
   --cor_texto_escuro: #2d494d;
   --cor_fog: #000000bc;
   --overlay: #fffcf7d3;
+  --cor_radio: var(--azul_piscina);
+  --cor_transparencia: var(--azul_piscina_transparente);
 }
 
 body {
@@ -33,6 +36,10 @@ body {
   font-size: 11px;
   letter-spacing: 1px;
   color: var(--cor_texto_normal);
+}
+
+input[type="radio"]{
+  accent-color: var(--cor_radio);
 }
 
 .hidden {
@@ -127,7 +134,9 @@ body {
 }
 
 .card--itens {
+  height: 155px;
   display: flex;
+  flex-direction: row;
   width: auto;
   overflow: scroll;
   scrollbar-width: none;
@@ -139,8 +148,14 @@ body {
 
 .card--imagem {
   display: block;
+  text-align: center;
   padding-right: 10px;
   height: 128px;
+}
+
+.card--preco{
+  transform: translate(0, -30px);
+  font-size: 10px;
 }
 
 .card--quantidade {
@@ -223,6 +238,29 @@ body {
   padding-bottom: 10px;
 }
 
+.card--cupom{
+  height: 0;
+  overflow: hidden;
+  margin: 0 20px 0 20px;
+  padding: 0 20px 0 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card--cupom-texto{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cupom__show{
+  margin-bottom: 10px;
+  height: 60px;
+  background-color: var(--azul_piscina_transparente);
+  transition: height 0.1s ease-in-out;
+  transition: background-color 0.3s ease-out;
+}
+
 hr {
   border: none;
   height: 1px;
@@ -266,6 +304,10 @@ hr {
   color: var(--cor_cartoes);
   letter-spacing: 1.5px;
   font-family: "Poppins", sans-serif;
+}
+
+.botao-finalizar:hover{
+  width: 95%;
 }
 
 .botao__show {

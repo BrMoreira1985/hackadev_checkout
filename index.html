@@ -41,7 +41,7 @@
         </div>
 
         <div class="card--acao">
-          <button class="card--botao-endereco" onclick="changeScreen()">
+          <button class="card--botao-endereco">
             <i class="fa-solid fa-location-dot"></i>
           </button>
         </div>
@@ -59,24 +59,27 @@
 
         <div class="card--itens">
           <div class="card--imagem">
-            <img src="./imagens/produto 1-mini.jpg" onclick="abreSacola()" />
+            <img src="./imagens/produto 1-mini.jpg" />
             <h3 class="card--quantidade card--texto">x 2</h3>
+            <h3 class="card--preco">R$ 89,00</h3>
           </div>
 
           <div class="card--imagem">
-            <img src="./imagens/produto 2-mini.jpg" onclick="abreSacola()" />
+            <img src="./imagens/produto 2-mini.jpg" />
             <h3 class="card--quantidade card--texto">x 1</h3>
+            <h3 class="card--preco">R$ 195,00</h3>
           </div>
 
           <div class="card--imagem">
-            <img src="./imagens/produto 3-mini.jpg" onclick="abreSacola()" />
+            <img src="./imagens/produto 3-mini.jpg" />
             <h3 class="card--quantidade card--texto">x 1</h3>
+            <h3 class="card--preco">R$ 135,00</h3>
           </div>
         </div>
 
         <div class="card--rodape">
           <h3 class="card--texto">Subtotal</h3>
-          <h3 class="card--texto">R$ 285,00</h3>
+          <h3 class="card--texto">R$ 508,00</h3>
         </div>
       </div>
       <!--Itens do carrinhho: fim-->
@@ -97,7 +100,6 @@
           <h3 class="card--texto valor">+R$ 50,00</h3>
         </div>
 
-        <hr />
 
         <div class="card--selecoes-frete">
           <input
@@ -111,7 +113,6 @@
           <h3 class="card--texto valor">+R$ 20,00</h3>
         </div>
 
-        <hr />
 
         <div class="card--selecoes-frete">
           <input
@@ -142,7 +143,7 @@
             <h3 class="card--texto">Pix</h3>
           </div>
 
-          <hr />
+
 
           <div class="card--opcao-pagamento OpcoesPagamento">
             <input
@@ -154,7 +155,7 @@
             <img src="/imagens/icons/card-icon.png" />
             <h3 class="card--texto">Cartão de Crédito</h3>
           </div>
-          <hr />
+
 
           <div class="card--opcao-pagamento parcelas">
             <input
@@ -189,7 +190,38 @@
             <h3 class="card--texto qtdParcelas" id="parcela_3">3</h3>
           </div>
 
-          <hr />
+          <div class="card--opcao-pagamento parcelas">
+            <input
+              type="radio"
+              id="x3"
+              name="parcela"
+              class="seletor--parcelas"
+              onclick="selecionaPagamento('Cartão de Crédito', 4)"
+            />
+            <h3 class="card--texto qtdParcelas" id="parcela_3">4</h3>
+          </div>
+
+          <div class="card--opcao-pagamento parcelas">
+            <input
+              type="radio"
+              id="x3"
+              name="parcela"
+              class="seletor--parcelas"
+              onclick="selecionaPagamento('Cartão de Crédito', 5)"
+            />
+            <h3 class="card--texto qtdParcelas" id="parcela_3">5</h3>
+          </div>
+
+          <div class="card--opcao-pagamento parcelas">
+            <input
+              type="radio"
+              id="x3"
+              name="parcela"
+              class="seletor--parcelas"
+              onclick="selecionaPagamento('Cartão de Crédito', 6)"
+            />
+            <h3 class="card--texto qtdParcelas" id="parcela_3">6</h3>
+          </div>
 
           <div class="card--opcao-pagamento OpcoesPagamento">
             <input
@@ -202,7 +234,7 @@
             <h3 class="card--texto">Boleto Bancário</h3>
           </div>
 
-          <hr />
+
 
           <div class="card--opcao-pagamento OpcoesPagamento">
             <input
@@ -215,7 +247,7 @@
             <h3 class="card--texto">Mercado Pago</h3>
           </div>
 
-          <hr />
+
 
           <div class="card--opcao-pagamento OpcoesPagamento">
             <input
@@ -231,17 +263,47 @@
       </div>
       <!--Pagamento: fim-->
 
+      <!--Cupom: início-->
+      <div class="card card--botao-cupom botaoCupom" onclick="mostrarCupom()">
+        <div class="linha">
+          <h2 class="card--titulo">Aplicar Cupom</h3>
+        </div>
+
+        <div class="card--cupom cardCupom">
+          <div class="card--cupom-texto">
+            <h3>-10.00%</h3>
+            <h3>Para pedidos acima de R$ 150,00</h3>
+          </div>
+          <input type="radio" name="cupom">
+        </div>
+
+        <div class="card--cupom cardCupom">
+          <div class="card--cupom-texto">
+            <h3>-5.00%</h3>
+            <h3>Para pedidos acima de R$ 50,00</h3>
+          </div>
+          <input type="radio" name="cupom">
+        </div>
+        
+      </div>
+      <!--Cupom: fim-->
+
       <!--Resumo: início-->
       <div class="card card--resumo">
         <h2 class="card--titulo">Resumo</h2>
         <div class="linha">
           <h3 class="card--texto">Subtotal:</h3>
-          <h3 class="card--texto">R$ 285,00</h3>
+          <h3 class="card--texto">R$ 508,00</h3>
         </div>
 
         <div class="linha">
           <h3 class="card--texto">Frete:</h3>
           <h3 class="card--texto" id="Frete">Selecione o frete</h3>
+        </div>
+
+        <div class="linha">
+          <h3 class="card--texto">Desconto:</h3>
+          <h3 class="card--texto" id="Frete">0%</h3>
         </div>
 
         <div class="linha">
