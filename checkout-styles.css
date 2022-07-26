@@ -29,8 +29,14 @@
   --cor_transparencia: var(--azul_piscina_transparente);
 }
 
+button {
+  font-family:"Poppins", sans-serif ;
+  cursor: pointer;
+}
+
 body {
-  background-color: var(--cor_fundo);
+  display: flex;
+  justify-content: center;
   font-family: "Poppins", sans-serif;
   font-weight: 100;
   font-size: 11px;
@@ -47,6 +53,7 @@ input[type="radio"]{
 }
 
 .checkout {
+  width: 100vw;
   display: flex;
   flex-direction: column;
   font-weight: 100;
@@ -61,6 +68,7 @@ input[type="radio"]{
   padding-right: 8px;
   margin-top: 5px;
   margin-bottom: 5px;
+  box-shadow: 0 2px 5px var(--cor_fundo);
 }
 
 .card--header {
@@ -238,12 +246,29 @@ input[type="radio"]{
 }
 
 .card--cupom{
-  height: 0;
-  overflow: hidden;
-  margin: 0 20px 0 20px;
-  padding: 0 20px 0 20px;
+  margin-top: 10px;
+  height: 30px;
+  width: 250px;
+  margin-left: 20px;
+  margin-bottom: 10px;
   display: flex;
-  justify-content: space-between;
+}
+
+.cupom--texto{
+  width: 200px;
+  border: none;
+  background-color: var(--azul_piscina_transparente);
+  font-family: 'Poppins', sans-serif;
+  padding-left: 10px;
+}
+
+.cupom--botao{
+  width: 50px;
+  border: none;
+  background-color: var(--cor_botoes);
+  color: var(--cor_cartoes);
+  padding: 0 2px 0 2px;
+  border-radius: none;
 }
 
 .card--cupom-texto{
@@ -264,6 +289,10 @@ input[type="radio"]{
   display: flex;
   justify-content: space-between;
   padding: 10px 0 10px 0;
+}
+
+.linha :nth-child(2){
+  text-align: right;
 }
 
 .card--finalizar {
@@ -311,7 +340,7 @@ input[type="radio"]{
   transition: all 0.2s ease-in-out;
 }
 
-.card--footer {
+.card--espacador {
   height: 95px;
   background-color: none;
   background-color: var(--cor_fundo);
@@ -348,11 +377,82 @@ input[type="radio"]{
   bottom: -10px;
 }
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 768px) {
+
+  body{
+    background-color: var(--branco_amarelado);
+  }
+
+  .card--header{
+    height: 80px;
+  }
+
+  .header--limites{
+    width: 90%;
+  }
+
+  .header--limites img{
+    transform: scale(1.7, 1.7);
+  }
+
+  .boddy{
+    background-color: var(--branco_amarelado);
+  }
+
+  .card{
+    box-shadow: 0 2px 5px var(--cor_fundo);
+  }
 
   .checkout{
-    width: 900px;
-    left: 50%;
+    width: 1000px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: var(--branco_amarelado);
+  }
 
+
+  .desktop--coluna-1{
+    width: 65%;
+    padding-top: 5px;
+  }
+
+  .desktop--coluna-2{
+    width: 34%;
+    padding-top: 5px;
+  }
+
+  .card--dados{
+    margin-top: 80px;
+    height: 100px;
+  }
+
+  .card--cupom-container{
+    margin-top: 80px;
+  }
+
+  .card--cupom{
+    width: 92%;
+  }
+
+  .card--espacador{
+    display: none;
+  }
+
+  .linha {
+    display: flex;
+    justify-content: space-between;
+    padding: 2px 0 2px 0;
+  }
+
+  .card--finalizar{
+    position: relative;
+  }
+
+}
+
+@media only screen and (min-width: 1000px) {
+  .header--limites{
+    width: 890px;
   }
 }

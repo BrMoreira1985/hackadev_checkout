@@ -21,337 +21,360 @@
     <div class="checkout">
       <!--Cabeçalho: início-->
       <div class="card card--header">
-        <img src="/imagens/ocean logo-branco.png" class="logo-ocean" />
-      </div>
-      <!--Cabeçalho: fim-->
-
-      <!--Dados do cliente: início-->
-      <div class="card card--dados">
-        <div class="card--informacoes">
-          <div class="card--nome-telefone">
-            <h3 class="card--texto">Maria Silva e Silva</h3>
-            <h3 class="card--texto">62 9999 0000</h3>
-          </div>
-          <div class="card--endereco-linha1">
-            <h3 class="card--texto">Rua Passárgadas nº 1234</h3>
-            <h3 class="card--texto">
-              Bairro dos Sonhos, Goiânia-GO, CEP 74000-000
-            </h3>
-          </div>
-        </div>
-
-        <div class="card--acao">
-          <button class="card--botao-endereco">
-            <i class="fa-solid fa-location-dot"></i>
-          </button>
-        </div>
-      </div>
-
-      <div class="card card--alterar-dados"></div>
-      <!--Dados do cliente: fim-->
-
-      <!--Itens do carrinhho: início-->
-      <div class="card card--pedido">
-        <div class="card--cabecalho">
-          <h2 class="card--titulo">Suas Compras</h2>
-          <h3 class="card--texto">3 itens</h3>
-        </div>
-
-        <div class="card--itens">
-          <div class="card--imagem">
-            <img src="./imagens/produto 1-mini.jpg" />
-            <h3 class="card--quantidade card--texto">x 2</h3>
-            <h3 class="card--preco">R$ 89,00</h3>
-          </div>
-
-          <div class="card--imagem">
-            <img src="./imagens/produto 2-mini.jpg" />
-            <h3 class="card--quantidade card--texto">x 1</h3>
-            <h3 class="card--preco">R$ 195,00</h3>
-          </div>
-
-          <div class="card--imagem">
-            <img src="./imagens/produto 3-mini.jpg" />
-            <h3 class="card--quantidade card--texto">x 1</h3>
-            <h3 class="card--preco">R$ 135,00</h3>
-          </div>
-        </div>
-
-        <div class="card--rodape">
-          <h3 class="card--texto">Subtotal</h3>
-          <h3 class="card--texto">R$ 508,00</h3>
-        </div>
-      </div>
-      <!--Itens do carrinhho: fim-->
-
-      <!--Frete: início-->
-      <div class="card card--envio">
-        <h2 class="card--titulo">Frete</h2>
-
-        <div class="card--selecoes-frete">
-          <input
-            type="radio"
-            id="SEDEX"
-            name="frete"
-            value="SEDEX"
-            onclick="adicionaFrete(50, 2); mostraPagamentos()"
-          />
-          <div class="frete--texto">
-            <h3 class="card--texto forma">Sedex (Até 2 dias úteis)</h3>
-            <h3 class="card--texto valor">+R$ 50,00</h3>
-          </div>
-        </div>
-
-
-        <div class="card--selecoes-frete">
-          <input
-            type="radio"
-            id="PAC"
-            name="frete"
-            value="PAC"
-            onclick="adicionaFrete(20, 6); mostraPagamentos()"
-          />
-          <div class="frete--texto">
-          <h3 class="card--texto forma">PAC (Até 6 dias úteis)</h3>
-          <h3 class="card--texto valor">+R$ 20,00</h3>
-        </div>
-        </div>
-
-
-        <div class="card--selecoes-frete">
-          <input
-            type="radio"
-            id="RETIRA"
-            name="frete"
-            value="RETIRA"
-            onclick="adicionaFrete(0, 0); mostraPagamentos()"
-          />
-          <div class="frete--texto">
-          <h3 class="card--texto forma">Retirar Pessoalmente</h3>
-          <h3 class="card--texto valor">Grátis</h3>
-        </div>
-        </div>
-      </div>
-      <!--Frete: fim-->
-
-      <!--Pagamento: início-->
-      <div class="card card--pagamento">
-        <h2 class="card--titulo">Forma de Pagamento</h2>
-        <div class="card--selecoes-pagamento">
-          <div class="card--opcao-pagamento OpcoesPagamento">
-            <input
-              type="radio"
-              id="Pix"
-              name="pagamento"
-              onclick="selecionaPagamento('Pix', 'À vista'); escondeParcelas()"
-            />
-            <img src="/imagens/icons/pix-icon.png" />
-            <h3 class="card--texto">Pix</h3>
-          </div>
-
-          <div class="card--opcao-pagamento OpcoesPagamento">
-            <input
-              type="radio"
-              id="Cartao"
-              name="pagamento"
-              onclick="selecionaPagamento('Cartão de Crédito', 'Aguardando definir'); mostraParcelas()"
-            />
-            <img src="/imagens/icons/card-icon.png" />
-            <h3 class="card--texto">Cartão de Crédito</h3>
-          </div>
-
-
-          <div class="card--opcao-pagamento parcelas">
-            <input
-              type="radio"
-              id="x1"
-              name="parcela"
-              class="seletor--parcelas"
-              onclick="selecionaPagamento('Cartão de Crédito', 1)"
-            />
-            <h3 class="card--texto qtdParcelas" id="parcela_1">1</h3>
-          </div>
-
-          <div class="card--opcao-pagamento parcelas">
-            <input
-              type="radio"
-              id="x2"
-              name="parcela"
-              class="seletor--parcelas"
-              onclick="selecionaPagamento('Cartão de Crédito', 2)"
-            />
-            <h3 class="card--texto qtdParcelas" id="parcela_2">2</h3>
-          </div>
-
-          <div class="card--opcao-pagamento parcelas">
-            <input
-              type="radio"
-              id="x3"
-              name="parcela"
-              class="seletor--parcelas"
-              onclick="selecionaPagamento('Cartão de Crédito', 3)"
-            />
-            <h3 class="card--texto qtdParcelas" id="parcela_3">3</h3>
-          </div>
-
-          <div class="card--opcao-pagamento parcelas">
-            <input
-              type="radio"
-              id="x3"
-              name="parcela"
-              class="seletor--parcelas"
-              onclick="selecionaPagamento('Cartão de Crédito', 4)"
-            />
-            <h3 class="card--texto qtdParcelas" id="parcela_3">4</h3>
-          </div>
-
-          <div class="card--opcao-pagamento parcelas">
-            <input
-              type="radio"
-              id="x3"
-              name="parcela"
-              class="seletor--parcelas"
-              onclick="selecionaPagamento('Cartão de Crédito', 5)"
-            />
-            <h3 class="card--texto qtdParcelas" id="parcela_3">5</h3>
-          </div>
-
-          <div class="card--opcao-pagamento parcelas">
-            <input
-              type="radio"
-              id="x3"
-              name="parcela"
-              class="seletor--parcelas"
-              onclick="selecionaPagamento('Cartão de Crédito', 6)"
-            />
-            <h3 class="card--texto qtdParcelas" id="parcela_3">6</h3>
-          </div>
-
-          <div class="card--opcao-pagamento OpcoesPagamento">
-            <input
-              type="radio"
-              id="Boleto"
-              name="pagamento"
-              onclick="selecionaPagamento('Boleto Bancário', 'À vista'); escondeParcelas()"
-            />
-            <img src="/imagens/icons/boleto-icon.png" />
-            <h3 class="card--texto">Boleto Bancário</h3>
-          </div>
-
-
-
-          <div class="card--opcao-pagamento OpcoesPagamento">
-            <input
-              type="radio"
-              id="MercadoPago"
-              name="pagamento"
-              onclick="selecionaPagamento('Mercado Pago', 'À vista'); escondeParcelas()"
-            />
-            <img src="/imagens/icons/mercadopago-icon.png" />
-            <h3 class="card--texto">Mercado Pago</h3>
-          </div>
-
-
-
-          <div class="card--opcao-pagamento OpcoesPagamento">
-            <input
-              type="radio"
-              id="PayPal"
-              name="pagamento"
-              onclick="selecionaPagamento('PayPal', 'À vista'); escondeParcelas()"
-            />
-            <img src="/imagens/icons/paypal-icon.png" />
-            <h3 class="card--texto">PayPal</h3>
-          </div>
-        </div>
-      </div>
-      <!--Pagamento: fim-->
-
-      <!--Cupom: início-->
-      <div class="card card--botao-cupom botaoCupom" onclick="mostrarCupom()">
-        <div class="linha">
-          <h2 class="card--titulo">Aplicar Cupom</h2>
-        </div>
-
-        <div class="card--cupom cardCupom">
-          <div class="card--cupom-texto">
-            <h3>-10.00%</h3>
-            <h3>Para pedidos acima de R$ 150,00</h3>
-          </div>
-          <input type="radio" name="cupom">
-        </div>
-
-        <div class="card--cupom cardCupom">
-          <div class="card--cupom-texto">
-            <h3>-5.00%</h3>
-            <h3>Para pedidos acima de R$ 50,00</h3>
-          </div>
-          <input type="radio" name="cupom">
+        <div class="header--limites">
+          <img src="/imagens/ocean logo-branco.png" class="logo-ocean" />
         </div>
         
       </div>
-      <!--Cupom: fim-->
+      <!--Cabeçalho: fim-->
 
-      <!--Resumo: início-->
-      <div class="card card--resumo">
-        <h2 class="card--titulo">Resumo</h2>
-        <div class="linha">
-          <h3 class="card--texto">Subtotal:</h3>
-          <h3 class="card--texto">R$ 508,00</h3>
-        </div>
+      
+      <div class="desktop--coluna-1">
 
-        <div class="linha">
-          <h3 class="card--texto">Frete:</h3>
-          <h3 class="card--texto" id="Frete">Selecione o frete</h3>
-        </div>
+<!--Dados do cliente: início-->
+<div class="card card--dados">
 
-        <div class="linha">
-          <h3 class="card--texto">Desconto:</h3>
-          <h3 class="card--texto" id="Frete">0%</h3>
-        </div>
+  <div class="card--informacoes">
+    <h2 class="card--titulo">Endereço</h2>
+    <div class="card--nome-telefone">
+      <h3 class="card--texto">Maria Silva e Silva</h3>
+      <h3 class="card--texto">62 9999 0000</h3>
+    </div>
 
-        <div class="linha">
-          <h3 class="card--texto">Total:</h3>
-          <h3 class="card--texto" id="ValorTotalResumo">Selecione o frete</h3>
-        </div>
+    <div class="card--endereco-linha1">
+      <h3 class="card--texto">Rua Passárgadas nº 1234</h3>
+      <h3 class="card--texto">
+        Bairro dos Sonhos, Goiânia-GO, CEP 74000-000
+      </h3>
+    </div>
 
-        <div class="linha">
-          <h3 class="card--texto">Prazo de Entrega:</h3>
-          <h3 class="card--texto" id="PrazoEntrega">Selecione o frete</h3>
-        </div>
+  </div>
 
-        <div class="linha">
-          <h3 class="card--texto">Forma de Pagamento:</h3>
-          <h3 class="card--texto" id="Pagamento">Selecione como pagar</h3>
-        </div>
+  <div class="card--acao">
+    <button class="card--botao-endereco">
+      <i class="fa-solid fa-location-dot"></i>
+    </button>
+  </div>
 
-        <div class="linha">
-          <h3 class="card--texto">Parcelas:</h3>
-          <h3 class="card--texto" id="Parcelas">Selecione como pagar</h3>
-        </div>
+</div>
+
+<div class="card card--alterar-dados"></div>
+<!--Dados do cliente: fim-->
+
+<!--Itens do carrinhho: início-->
+<div class="card card--pedido">
+  <div class="card--cabecalho">
+    <h2 class="card--titulo">Suas Compras</h2>
+    <h3 class="card--texto">3 itens</h3>
+  </div>
+
+  <div class="card--itens">
+    <div class="card--imagem">
+      <img src="./imagens/produto 1-mini.jpg" />
+      <h3 class="card--quantidade card--texto">x 2</h3>
+      <h3 class="card--preco">R$ 89,00</h3>
+    </div>
+
+    <div class="card--imagem">
+      <img src="./imagens/produto 2-mini.jpg" />
+      <h3 class="card--quantidade card--texto">x 1</h3>
+      <h3 class="card--preco">R$ 195,00</h3>
+    </div>
+
+    <div class="card--imagem">
+      <img src="./imagens/produto 3-mini.jpg" />
+      <h3 class="card--quantidade card--texto">x 1</h3>
+      <h3 class="card--preco">R$ 135,00</h3>
+    </div>
+  </div>
+
+  <div class="card--rodape">
+    <h3 class="card--texto">Subtotal</h3>
+    <h3 class="card--texto">R$ 508,00</h3>
+  </div>
+</div>
+<!--Itens do carrinhho: fim-->
+
+<!--Frete: início-->
+<div class="card card--envio">
+  <h2 class="card--titulo">Frete</h2>
+
+  <div class="card--selecoes-frete">
+    <input
+      type="radio"
+      id="SEDEX"
+      name="frete"
+      value="SEDEX"
+      onclick="adicionaFrete(50, 2); mostraPagamentos()"
+    />
+    <div class="frete--texto">
+      <h3 class="card--texto forma">Sedex (Até 2 dias úteis)</h3>
+      <h3 class="card--texto valor">+R$ 50,00</h3>
+    </div>
+  </div>
+
+
+  <div class="card--selecoes-frete">
+    <input
+      type="radio"
+      id="PAC"
+      name="frete"
+      value="PAC"
+      onclick="adicionaFrete(20, 6); mostraPagamentos()"
+    />
+    <div class="frete--texto">
+    <h3 class="card--texto forma">PAC (Até 6 dias úteis)</h3>
+    <h3 class="card--texto valor">+R$ 20,00</h3>
+  </div>
+  </div>
+
+
+  <div class="card--selecoes-frete">
+    <input
+      type="radio"
+      id="RETIRA"
+      name="frete"
+      value="RETIRA"
+      onclick="adicionaFrete(0, 0); mostraPagamentos()"
+    />
+    <div class="frete--texto">
+    <h3 class="card--texto forma">Retirar Pessoalmente</h3>
+    <h3 class="card--texto valor">Grátis</h3>
+  </div>
+  </div>
+</div>
+<!--Frete: fim-->
+
+<!--Pagamento: início-->
+<div class="card card--pagamento">
+  <h2 class="card--titulo">Forma de Pagamento</h2>
+  <div class="card--selecoes-pagamento">
+    <div class="card--opcao-pagamento OpcoesPagamento">
+      <input
+        type="radio"
+        id="Pix"
+        name="pagamento"
+        onclick="selecionaPagamento('Pix', 'À vista'); escondeParcelas()"
+      />
+      <img src="/imagens/icons/pix-icon.png" />
+      <h3 class="card--texto">Pix</h3>
+    </div>
+
+    <div class="card--opcao-pagamento OpcoesPagamento">
+      <input
+        type="radio"
+        id="Cartao"
+        name="pagamento"
+        onclick="selecionaPagamento('Cartão de Crédito', 'Aguardando definir'); mostraParcelas()"
+      />
+      <img src="/imagens/icons/card-icon.png" />
+      <h3 class="card--texto">Cartão de Crédito</h3>
+    </div>
+
+
+    <div class="card--opcao-pagamento parcelas">
+      <input
+        type="radio"
+        id="x1"
+        name="parcela"
+        class="seletor--parcelas"
+        onclick="selecionaPagamento('Cartão de Crédito', 1)"
+      />
+      <h3 class="card--texto qtdParcelas" id="parcela_1">1</h3>
+    </div>
+
+    <div class="card--opcao-pagamento parcelas">
+      <input
+        type="radio"
+        id="x2"
+        name="parcela"
+        class="seletor--parcelas"
+        onclick="selecionaPagamento('Cartão de Crédito', 2)"
+      />
+      <h3 class="card--texto qtdParcelas" id="parcela_2">2</h3>
+    </div>
+
+    <div class="card--opcao-pagamento parcelas">
+      <input
+        type="radio"
+        id="x3"
+        name="parcela"
+        class="seletor--parcelas"
+        onclick="selecionaPagamento('Cartão de Crédito', 3)"
+      />
+      <h3 class="card--texto qtdParcelas" id="parcela_3">3</h3>
+    </div>
+
+    <div class="card--opcao-pagamento parcelas">
+      <input
+        type="radio"
+        id="x3"
+        name="parcela"
+        class="seletor--parcelas"
+        onclick="selecionaPagamento('Cartão de Crédito', 4)"
+      />
+      <h3 class="card--texto qtdParcelas" id="parcela_3">4</h3>
+    </div>
+
+    <div class="card--opcao-pagamento parcelas">
+      <input
+        type="radio"
+        id="x3"
+        name="parcela"
+        class="seletor--parcelas"
+        onclick="selecionaPagamento('Cartão de Crédito', 5)"
+      />
+      <h3 class="card--texto qtdParcelas" id="parcela_3">5</h3>
+    </div>
+
+    <div class="card--opcao-pagamento parcelas">
+      <input
+        type="radio"
+        id="x3"
+        name="parcela"
+        class="seletor--parcelas"
+        onclick="selecionaPagamento('Cartão de Crédito', 6)"
+      />
+      <h3 class="card--texto qtdParcelas" id="parcela_3">6</h3>
+    </div>
+
+    <div class="card--opcao-pagamento OpcoesPagamento">
+      <input
+        type="radio"
+        id="Boleto"
+        name="pagamento"
+        onclick="selecionaPagamento('Boleto Bancário', 'À vista'); escondeParcelas()"
+      />
+      <img src="/imagens/icons/boleto-icon.png" />
+      <h3 class="card--texto">Boleto Bancário</h3>
+    </div>
+
+
+
+    <div class="card--opcao-pagamento OpcoesPagamento">
+      <input
+        type="radio"
+        id="MercadoPago"
+        name="pagamento"
+        onclick="selecionaPagamento('Mercado Pago', 'À vista'); escondeParcelas()"
+      />
+      <img src="/imagens/icons/mercadopago-icon.png" />
+      <h3 class="card--texto">Mercado Pago</h3>
+    </div>
+
+
+
+    <div class="card--opcao-pagamento OpcoesPagamento">
+      <input
+        type="radio"
+        id="PayPal"
+        name="pagamento"
+        onclick="selecionaPagamento('PayPal', 'À vista'); escondeParcelas()"
+      />
+      <img src="/imagens/icons/paypal-icon.png" />
+      <h3 class="card--texto">PayPal</h3>
+    </div>
+  </div>
+</div>
+<!--Pagamento: fim-->
+</div>
+      
+
+      <div class="desktop--coluna-2">
+
+        <!--Cupom: início-->
+<div class="card card--cupom-container botaoCupom">
+ 
+  <h2 class="card--titulo">Aplicar Cupom</h2>
+
+
+<div class="card--cupom">
+  <input type="text" placeholder="Digite seu cupom" class="cupom--texto">
+  <button class="cupom--botao">Aplicar</button>
+</div>
+
+<!--<div class="card--cupom cardCupom">
+  <div class="card--cupom-texto">
+    <h3>-10.00%</h3>
+    <h3>Para pedidos acima de R$ 150,00</h3>
+  </div>
+  <input type="radio" name="cupom">
+</div>
+
+<div class="card--cupom cardCupom">
+  <div class="card--cupom-texto">
+    <h3>-5.00%</h3>
+    <h3>Para pedidos acima de R$ 50,00</h3>
+  </div>
+  <input type="radio" name="cupom">
+</div>-->
+
+</div>
+<!--Cupom: fim-->
+
+ <!--Resumo: início-->
+ <div class="card card--resumo">
+  <h2 class="card--titulo">Resumo</h2>
+  <div class="linha">
+    <h3 class="card--texto">Subtotal:</h3>
+    <h3 class="card--texto">R$ 508,00</h3>
+  </div>
+
+  <div class="linha">
+    <h3 class="card--texto">Frete:</h3>
+    <h3 class="card--texto" id="Frete">Selecione o frete</h3>
+  </div>
+
+  <div class="linha">
+    <h3 class="card--texto">Desconto:</h3>
+    <h3 class="card--texto" id="Frete">0%</h3>
+  </div>
+
+  <div class="linha">
+    <h3 class="card--texto">Total:</h3>
+    <h3 class="card--texto" id="ValorTotalResumo">Selecione o frete</h3>
+  </div>
+
+  <div class="linha">
+    <h3 class="card--texto">Prazo de Entrega:</h3>
+    <h3 class="card--texto" id="PrazoEntrega">Selecione o frete</h3>
+  </div>
+
+  <div class="linha">
+    <h3 class="card--texto">Forma de Pagamento:</h3>
+    <h3 class="card--texto" id="Pagamento">Selecione como pagar</h3>
+  </div>
+
+  <div class="linha">
+    <h3 class="card--texto">Parcelas:</h3>
+    <h3 class="card--texto" id="Parcelas">Selecione como pagar</h3>
+  </div>
+</div>
+<!--Resumo: fim-->
+
+<!--Rodapé: início-->
+<div class="card card--espacador"></div>
+<!--Rodapé: fim-->
+
+<!--Finalizar pedido: início-->
+<div class="card card--finalizar">
+  <div class="card--finalizar-texto">
+    <h2 class="card--titulo">Total:</h2>
+    <h2 class="card--titulo" id="ValorTotal">Selecione o frete</h2>
+  </div>
+
+  <button class="botao-finalizar botaoFinalizar">FINALIZAR COMPRA</button>
+</div>
+<!--Finalizar pedido: fim-->
+
+<div class="card--fog" id="Fog" onclick="fechaSacola()">
+  <div class="card card--sacola" id="Sacola">
+    <h2 class="card--titulo">Sacola</h2>
+  </div>
+</div>
       </div>
-      <!--Resumo: fim-->
 
-      <!--Rodapé: início-->
-      <div class="card card--footer"></div>
-      <!--Rodapé: fim-->
-
-      <!--Finalizar pedido: início-->
-      <div class="card card--finalizar">
-        <div class="card--finalizar-texto">
-          <h2 class="card--titulo">Total:</h2>
-          <h2 class="card--titulo" id="ValorTotal">Selecione o frete</h2>
-        </div>
-
-        <button class="botao-finalizar botaoFinalizar">FINALIZAR COMPRA</button>
-      </div>
-      <!--Finalizar pedido: fim-->
-
-      <div class="card--fog" id="Fog" onclick="fechaSacola()">
-        <div class="card card--sacola" id="Sacola">
-          <h2 class="card--titulo">Sacola</h2>
-        </div>
-      </div>
+     
     </div>
     <script src="/checkout.js"></script>
   </body>
