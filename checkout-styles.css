@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-weight: 400;
 }
 
 :root {
@@ -15,30 +18,37 @@
   --rosa_coral_faded: #fff0f1;
   --laranja_faded: #fdded8;
   --azul_piscina_transparente: #478f981d;
+  --azul_marinho_desbotado: #44446b;
 
-  --cor_botoes: var(--azul_piscina);
+  --cor_botoes: var(--azul_marinho);
   --cor_texto_botoes: var(--branco_amarelado);
   --cor_cartoes: var(--branco_amarelado);
   --cor_fundo: var(--laranja_faded);
   --cor_header: var(--azul_piscina);
-  --cor_texto_normal: #69868a;
-  --cor_texto_escuro: #2d494d;
+  --cor_texto_normal: var(--azul_marinho_desbotado);
+  --cor_texto_escuro: var(--azul_marinho);
   --cor_fog: #000000bc;
   --overlay: #fffcf7d3;
-  --cor_radio: var(--azul_piscina);
+  --cor_radio: var(--azul_marinho);
   --cor_transparencia: var(--azul_piscina_transparente);
 }
 
 button {
   font-family:"Poppins", sans-serif ;
+  background-color: var(--cor_botoes);
   cursor: pointer;
+  font-weight: 200;
+}
+
+button:hover{
+  background-color: var(--azul_piscina);
+  transition: all 0.3s ease-in-out;
 }
 
 body {
   display: flex;
   justify-content: center;
   font-family: "Poppins", sans-serif;
-  font-weight: 100;
   font-size: 11px;
   letter-spacing: 1px;
   color: var(--cor_texto_normal);
@@ -46,6 +56,12 @@ body {
 
 input[type="radio"]{
   accent-color: var(--cor_radio);
+}
+
+input[type="radio"]:hover{
+  accent-color: var(--azul_piscina);
+  background-color: var(--azul_piscina);
+  transition: all 0.3s ease-in-out;
 }
 
 .hidden {
@@ -88,11 +104,13 @@ input[type="radio"]{
 
 .logo-ocean {
   height: 48px;
-  padding-top: 15px;
+  padding-top: 8px;
 }
 
 .card--titulo {
   color: var(--cor_texto_escuro);
+  text-transform: uppercase;
+  font-weight: 600;
 }
 
 .card--dados {
@@ -102,8 +120,12 @@ input[type="radio"]{
 
 .card--nome-telefone {
   display: flex;
-  justify-content: space-between;
   color: var(--cor_texto_escuro);
+  font-weight: 600;
+}
+
+.card--nome-telefone :nth-child(2){
+  padding-left: 15px;
 }
 
 .card--informacoes {
@@ -115,7 +137,6 @@ input[type="radio"]{
   height: 30px;
   border-radius: 50%;
   border: none;
-  background-color: var(--cor_botoes);
   color: var(--cor_cartoes);
 }
 
@@ -251,7 +272,7 @@ input[type="radio"]{
 
 .card--cupom{
   margin-top: 10px;
-  height: 30px;
+  height: 40px;
   width: 250px;
   margin-left: 20px;
   margin-bottom: 10px;
@@ -264,15 +285,22 @@ input[type="radio"]{
   background-color: var(--azul_piscina_transparente);
   font-family: 'Poppins', sans-serif;
   padding-left: 10px;
+  border-radius: 10px 0 0 10px;
+}
+
+.cupom--texto:focus {
+  outline: none;
+  box-shadow: 1px 1px 2px var(--azul_marinho_desbotado);
+  transition: all 0.1s ease-in-out;
 }
 
 .cupom--botao{
-  width: 50px;
+  width: 60px;
   border: none;
   background-color: var(--cor_botoes);
   color: var(--cor_cartoes);
   padding: 0 2px 0 2px;
-  border-radius: none;
+  border-radius: 0 10px 10px 0;
 }
 
 .card--cupom-texto{
@@ -329,10 +357,12 @@ input[type="radio"]{
   color: var(--cor_cartoes);
   letter-spacing: 1.5px;
   font-family: "Poppins", sans-serif;
+  border-radius: 10px;
 }
 
 .botao-finalizar:hover{
   width: 95%;
+  letter-spacing: 3px;
 }
 
 .botao__show {
@@ -341,13 +371,13 @@ input[type="radio"]{
   margin-top: 10px;
   height: auto;
   pointer-events: auto;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .card--espacador {
   height: 95px;
   background-color: none;
-  background-color: var(--cor_fundo);
+  background-color: var(--cor_cartoes);
   font-weight: bolder;
 }
 
